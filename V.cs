@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace test_7_game
+namespace Dungeons
 {
-    internal class Program
+    internal class V
     {
-        static void Main(string[] args)
-        {
-            //Размер поля
+
+        public void Run()
+        { //Размер поля
             string[,] zone = new string[9, 16];
             //Комнаты
             void Room0(int i, int j)
@@ -116,29 +117,35 @@ namespace test_7_game
             {
                 switch (i, j)
                 {
-                    case (4, 8):
-                        zone[i, j] = " ?";
+                    case ( >= 3 and <= 5, 15):
+                        zone[i, j] = " #";
                         break;
-                    case (8, 10):
+                    case (1, 14):
+                    case (8, 14):
                         zone[i, j] = "| ";
                         break;
-                    case (1, 1):
-                        zone[i, j] = " |";
-                        break;
-                    case (0, 2):
+                    case (2, >= 14 and <= 15):
+                    case (6, >= 14 and <= 15):
                         zone[i, j] = "__";
                         break;
                     default:
                         break;
                 }
+                Console.Write($" {zone[i, j]}");
             }
+            //Игрок
+            int hp = 20;
+            int mp = 10;
+            int pw = 2;
+            int money = 12;
+            bool hat = false;
             //Спавн игрока
-            //int y = 5, x = 7;
-            int y = 4, x = 4;
+            int y = 5, x = 7;
+            //int y = 4, x = 4;
             //Буфер
             int yb = y, xb = x;
             //Номер локации
-            int loc = 3;
+            int loc = 0;
             //Состояние диалога
             bool ms = false;
             //Готовность к диалогу
@@ -170,6 +177,10 @@ namespace test_7_game
                     case (9, >= 7 and <= 9, 2):
                         loc = 1;
                         y -= 8;
+                        break;
+                    case ( >= 3 and <= 5, -1, 2):
+                        loc = 3;
+                        x += 15;
                         break;
                 }
 
@@ -284,7 +295,7 @@ namespace test_7_game
                         ms = false;
                         break;
                     case (true, true or false, false, true or false, true or false, 2):
-                        Console.WriteLine("О нет! Дверь закрылась снаружи. \nВреатли её можно открыть отсюда..");
+                        Console.WriteLine("О нет! Дверь закрылась снаружи. \nВряд ли её можно открыть отсюда..");
                         ms = false;
                         break;
                     case (true, true or false, true, true or false, true or false, 2):
@@ -306,6 +317,7 @@ namespace test_7_game
                         Console.WriteLine("Вижу ты нашёл меч, я открою для тебя дверь..\nВ качестве благодарности пожалуйста возьми мою шляпу. Мой отец говорил она приносит удачу..");
                         ms = false;
                         dd = true;
+                        hat = true;
                         break;
                     case (true, false, true, false, false, 3):
                         Console.WriteLine("Ты хочешь остаться со мной? Я был бы рад умереть не в одиночестве..");
@@ -324,7 +336,24 @@ namespace test_7_game
                         break;
                 }
 
-                Console.WriteLine(y);
+                //Характеристики
+                Console.WriteLine($"\nHP = {hp}/20\nMP = {mp}/10\nPW = {pw}");
+                Console.WriteLine("-----------");
+                if (sw == true)
+                {
+                    Console.WriteLine("Меч +3");
+                    pw = 5;
+                }
+                if (hat == true)
+                {
+                    Console.WriteLine("Шляпа");
+                }
+                if (sw == true)
+                {
+                    Console.WriteLine("-----------");
+                }
+                Console.WriteLine($"Золото - {money}м");
+                Console.WriteLine("\n" + y);
                 Console.WriteLine(x);
 
                 //Управление
