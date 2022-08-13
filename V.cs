@@ -353,8 +353,6 @@ namespace Dungeons
                     Console.WriteLine("-----------");
                 }
                 Console.WriteLine($"Золото - {money}м");
-                Console.WriteLine("\n" + y);
-                Console.WriteLine(x);
 
                 //Управление
                 ConsoleKeyInfo consoleKeyInfo = Console.ReadKey(true);
