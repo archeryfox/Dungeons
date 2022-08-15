@@ -12,7 +12,10 @@ namespace Dungeons
         {
             R CodeR = new R();
             V CodeV = new V();
-            Console.WriteLine("\t\tВыберите версию игры:\n\n >Версия Ростика - клавиша R\n >Версия Вити(Демо) - клавиша V\n");
+            
+            Console.WriteLine("\t\tВыберите версию игры:\n" +
+                "\n > Версия Ростика - клавиша R" +
+                "\n > Версия Вити(Демо) - клавиша V\n");
             Console.WriteLine($"              _\r\n            ,/A\\,\r\n          .//`_`\\\\,\r\n        ,//`____-`\\\\,\r\n      ,//`[_ROVER_]`\\\\,\r\n    ,//`=  ==  __-  _`\\\\,\r\n   //|__=  __- == _  __|\\\\\r\n   ` |  __ .-----.  _  | `\r\n     | - _/       \\-   |\r\n     |__  | .-\"-. | __=|\r\n     |  _=|/)   (\\|    |\r\n     |-__ (/ a a \\) -__|\r\n     |___ /`\\_Y_/`\\____|\r\n          \\)8===8(/");
             ConsoleKeyInfo consoleKeyInfo = Console.ReadKey(true);
             switch (consoleKeyInfo.Key)
@@ -23,10 +26,8 @@ namespace Dungeons
                     Console.Clear();
                     Console.WriteLine("Не та кнопка. Нажмите указанные!");
                     Main(args);
-                    break;
+                break;
             }
-            CodeV.Run();
-            CodeR.Run();
         }
     }
 }

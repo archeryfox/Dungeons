@@ -44,7 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extencions.cs" />
+    <Compile Include="Obj.cs" />
+    <Compile Include="Zone.cs" />
+    <Compile Include="NPC.cs" />
+    <Compile Include="Weapon.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="V.cs" />
     <Compile Include="R.cs" />
     <Compile Include="Launcher.cs" />
@@ -52,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

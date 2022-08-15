@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
@@ -11,7 +12,10 @@ namespace Dungeons
     {
 
         public void Run()
-        { //Размер поля
+        {
+            var bow = new Bow();
+            Console.WriteLine(bow.Type);
+            //Размер поля
             string[,] zone = new string[9, 16];
             //Комнаты
             void Room0(int i, int j)
