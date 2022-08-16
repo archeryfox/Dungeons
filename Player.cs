@@ -10,6 +10,34 @@ namespace Dungeons
 
 internal class Player : Weapon
 {
+        public dynamic[] Inv = { "Пусто", "Пусто", "Пусто", "Пусто", "Пусто", "Пусто"};
+        public void ShowInv(ref dynamic [] Inv) 
+        {
+            
+            for (int y = 0; y < 4; y++)
+            {
+                for (int x = 0; x < 10; x++)
+                {
+                    if (x==10)
+                    {
+                        Console.WriteLine();
+                    }
+                    switch (y,x)
+                    {
+                        case (0 or 3,>=0 and <= 10): Console.Write("__"); break;
+                        case (1, 0): Console.Write($"{Inv[0]} {Inv[1]} {Inv[2]} {Inv[3]} {Inv[4]} {Inv[5]}"); break;
+                        
+                        default:
+                            break;
+                    }
+                }
+
+            }
+            for(int i = 0; i < Inv.Length; i++)
+            {
+
+            }
+        }
         public Player(Weapon weapon)
         {
             Money = 0;
@@ -29,11 +57,11 @@ internal class Player : Weapon
         }
         public int Money;
         private int hp;
-
+        
         public int Hp
         {
             get { return hp; }
-            set { hp = value; }
+            private set { hp = value; }
         }
 
         private static int Strenght;

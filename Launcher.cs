@@ -12,7 +12,7 @@ namespace Dungeons
         {
             R CodeR = new R();
             V CodeV = new V();
-            
+
             Console.WriteLine("\t\tВыберите версию игры:\n" +
                 "\n > Версия Ростика - клавиша R" +
                 "\n > Версия Вити(Демо) - клавиша V\n");

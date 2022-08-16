@@ -22,8 +22,7 @@ namespace Dungeons
             int WizardHelp = 0;
             bool WizardReject;
             bool IsTalk = false;
-            WizardReject = SecondQuest = WizardMoney 
-            = WizardKill = NpcKilled = NpcReward = false;
+            WizardReject = SecondQuest = WizardMoney = WizardKill = NpcKilled = NpcReward = false;
             int Heal = 40;
             bool Book = false;
             bool ChestOpen = false;
@@ -48,15 +47,13 @@ namespace Dungeons
             bool TalkToNPC = false;
             var rnd = new Random();
             Player Player = new Player();
-            
             int EnemyHp = 50;
             int PlayerHp = 100;
             int EnemyDmg = 15;
             int PlayerDmg = 5 + WeaponDmg;
             var IsFight = true;
             var Bow = new Bow();
-            dynamic[] Invt = { Money, Bow };
-
+            
             //Спавн игрока
             int y = 2, x = 5;
             bool isSolid;
@@ -65,6 +62,7 @@ namespace Dungeons
 
             while (true)
             {
+            
                 //Console.WriteLine(Invt[1].Type); Тест инвентаря
                 void Room1(string[,] zone, int y, int x)
                 {
@@ -86,37 +84,7 @@ namespace Dungeons
                 }
                 if (zone[y, x] == " U")
                 {
-                    Solid(ref y, ref x, ref yb, ref xb);
-                    Console.WriteLine("Вы стоите перед огромными дверьми Короля Чернокнижников. Чтобы открыть их, нужна немалая сила.\nПопытаться открыть их? Y - Да N - Нет");
-                    ConsoleKeyInfo WarlockDoor = Console.ReadKey(true);
-                    switch (WarlockDoor.Key)
-                    {
-                        case ConsoleKey.Y:
-                            if (Player.StrengthUp)
-                            {
-                                Console.WriteLine("Вы успешно открыли дверь, приложив немалую силу, которая, благо, у вас имеется!");
-                                if (x == 11)
-                                {
-                                    x = x - 2;
-                                }
-                                else if (x == 9)
-                                {
-                                    x = x + 2;
-                                }
-                            }
-                            else
-                            {
-                                int DoorDmg = rnd.Next(1, 20);
-                                PlayerHp = PlayerHp - DoorDmg;
-                                Console.WriteLine($"Хоть вы и применили всю свою силу, открыть дверь не удалось. Вы растянули мышцы и получили {DoorDmg} урона.\nВаше нынешнее здоровье - {PlayerHp}.");
-                            }
-                            break;
-                        case ConsoleKey.N:
-                            Console.WriteLine("Вы решили не открывать двери.\nНа мгновение вам показалось, что дверь хочет, чтобы вы ее открыли.");
-                            break;
-                        default:
-                            break;
-                    }
+                    Obj.Door(ref Player, ref PlayerHp, ref x, rnd);
                 }
                 if (zone[y, x] == " !")
                 {
@@ -124,29 +92,27 @@ namespace Dungeons
                 }
                 if (zone[y, x] == " W")
                 {
-                    Solid(ref y, ref x, ref yb, ref xb);
                     NPC.Wizard(ref Book, ref SecondQuest, ref WizardMoney, ref WizardReward, ref Money, ref WizardHelp, ref WizardKill, ref NpcKilled);
                 }
                 if (zone[y, x] == " M")
                 {
                     IsTalk = true;
-                    NPC.Merchant(ref Book, ref IsTalk, ref BookReject, ref Money, ref ArmorDef, ref LightDef, ref HeavyDef, ref WeaponDef, ref WeaponDmg, ref ShieldDef, ref ShieldDmg, ref BowDef, ref BowDmg, ref SwordDef, ref SwordDmg, ref Potion);
+                    NPC.Merchant(ref Book, ref IsTalk, ref BookReject, ref Money, ref ArmorDef, ref LightDef, ref HeavyDef,
+                        ref WeaponDef, ref WeaponDmg, ref ShieldDef, ref ShieldDmg, ref BowDef, ref BowDmg, ref SwordDef, ref SwordDmg, ref Potion);
                 }
                 if (zone[y, x] == " ?")
                 {
-                    Solid(ref y, ref x, ref yb, ref xb);
             
-                    NPC.QuestNPC(ref EnemyDead, ref TalkToNPC, ref TalkTalk, ref RewardNPC, ref Money, ref SecondQuest, ref  WizardMoney, ref  WizardKill, ref  NpcKilled, ref NpcReward, ref PlayerHp, ref Player.StrengthUp);
+                    NPC.QuestNPC(ref EnemyDead, ref TalkToNPC, ref TalkTalk, ref RewardNPC, ref Money, ref SecondQuest, ref  WizardMoney,
+                        ref  WizardKill, ref  NpcKilled, ref NpcReward, ref PlayerHp, ref Player.StrengthUp);
                 }
                 if (zone[y, x] == " X")
                 {
-                    Solid(ref y, ref x, ref yb, ref xb);
                     NPC.Monster(ref TalkToNPC, ref EnemyDead, ref IsFight, ref PlayerHp, ref EnemyHp, ref y, ref Potion, ref Heal, 
                         ref EnemyDmg, ref WeaponDef, ref ArmorDef, ref WeaponDmg);
                 }
                 if (zone[y, x] == " D")
                 {
-                    Solid(ref y, ref x, ref yb, ref xb);
                     NPC.Doctor(ref PlayerHp, ref Money);
                 }
                 if (zone[y, x] == " O")
@@ -165,7 +131,6 @@ namespace Dungeons
                 }
                 if (zone[y, x] == " %")
                 {
-                    Solid(ref y, ref x, ref yb, ref xb);
                     NPC.Dumbbell(ref Player.StrengthUp, ref Player.TalkToTrainer);
                 }
 
@@ -173,7 +138,9 @@ namespace Dungeons
                 {
                     isSolid = zone[y, x] == " #" || zone[y, x] == " |" || zone[y, x] == "| "
                            || zone[y, x] == "__" || zone[y, x] == "|_" || zone[y, x] == "_|" 
-                           || zone[y, x] == " Ш" || zone[y, x] == " W" || zone[y, x] == " %";
+                           || zone[y, x] == " Ш" || zone[y, x] == " W" || zone[y, x] == " %"
+                           || zone[y, x] == " U" || zone[y, x] == " G" || zone[y, x] == " T"
+                           || zone[y, x] == " O" || zone[y, x] == " D" || zone[y, x] == " X";
                     if (isSolid)
                     {
                         Solid(ref y, ref x, ref yb, ref xb);
@@ -195,7 +162,6 @@ namespace Dungeons
                     default:
                         break;
                 }
-                
 
                 //Перезапись буфера
 
@@ -214,7 +180,7 @@ namespace Dungeons
                     case 1: Room1(zone, y, x); break;
                     case 2: Room2(zone, y, x); break;
                 }
-
+                Player.ShowInv(ref Player.Inv);
                 //Управление
                 ConsoleKey consoleKey = Console.ReadKey(true).Key;
                 switch (consoleKey)

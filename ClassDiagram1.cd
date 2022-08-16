@@ -1,63 +1,77 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="Dungeons.Launcher">
-    <Position X="5.75" Y="6.25" Width="1.5" />
+    <Position X="9.75" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Launcher.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dungeons.NPC">
-    <Position X="12.75" Y="5.5" Width="3.25" />
+    <Position X="11.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAAAAQAAEABAAAAAAAACAgAAAAgIAAAAAAAA=</HashCode>
+      <HashCode>IAAAAAAAAAAAQAAEABAAAAAAAACAgAQAAgIAAAAAAAA=</HashCode>
       <FileName>NPC.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Dungeons.Obj">
+    <Position X="11.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Obj.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dungeons.Player">
+    <Position X="7.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAgAAAAAIAAAAAAAAAQAAAAAQAAAhAAAAAQCA=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="Dungeons.R">
-    <Position X="7.75" Y="6.25" Width="1.5" />
+    <Position X="9.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>R.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dungeons.V">
-    <Position X="9.75" Y="6.25" Width="1.5" />
+    <Position X="9.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>V.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Dungeons.Weapon" Collapsed="true">
-    <Position X="7.75" Y="2" Width="1.5" />
+  <Class Name="Dungeons.Weapon">
+    <Position X="4.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAgAAAAACAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Weapon.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dungeons.Sword">
-    <Position X="10" Y="3.25" Width="1.5" />
+    <Position X="7.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAgAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapon.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dungeons.Shield">
-    <Position X="5.5" Y="3.25" Width="1.5" />
+    <Position X="2.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAgAAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapon.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dungeons.Bow">
-    <Position X="7.75" Y="3.25" Width="1.5" />
+    <Position X="4.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAgAAAAACAAAAAgAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Weapon.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Struct Name="Dungeons.Zone">
-    <Position X="12" Y="2.25" Width="3.75" />
+    <Position X="2.75" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAACQBAgAAAAAAAAAAQAAAAAAAAAEAACAAAACAA=</HashCode>
       <FileName>Zone.cs</FileName>
