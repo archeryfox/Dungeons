@@ -10,7 +10,6 @@ namespace Dungeons
     {
        public void Run()
         {
-<<<<<<< Updated upstream
 
             {
                 bool TalkTalk = false;
@@ -44,77 +43,6 @@ namespace Dungeons
                 int PlayerDmg = 5 + WeaponDmg;
                 var IsFight = true;
                 dynamic[] Invenetary = { Money, Weapon };
-=======
-            bool NpcReward;
-            bool WizardReward = false;
-            bool NpcKilled;
-            bool WizardKill;
-            bool WizardMoney;
-            bool SecondQuest;
-            bool TalkTalk = false;
-            bool RewardNPC = false;
-            int WizardHelp = 0;
-            bool WizardReject;
-            bool IsTalk = false;
-            WizardReject = SecondQuest = WizardMoney 
-            = WizardKill = NpcKilled = NpcReward = false;
-            int Heal = 40;
-            bool Book = false;
-            bool ChestOpen = false;
-            int Potion = 0;
-            int ArmorDef = 0;
-            int LightDef = 5;
-            int HeavyDef = 12;
-            int Money = 0;
-            bool BookReject = false;
-            int WeaponDmg = 0;
-            int WeaponDef = 0;
-            int SwordDef = 0;
-            int SwordDmg = 15;
-            int BowDmg = 12;
-            int BowDef = 5;
-            int ShieldDmg = 5;
-            int ShieldDef = 12;
-            string[,] zone = new string[9, 16];
-            Zone _proto_zone = new Zone();
-            _proto_zone.ZoneId = 1;              // Номер зоны
-            bool EnemyDead = false;
-            bool TalkToNPC = false;
-            var rnd = new Random();
-            Player Player = new Player();
-            
-            int EnemyHp = 50;
-            int PlayerHp = 100;
-            int EnemyDmg = 15;
-            int PlayerDmg = 5 + WeaponDmg;
-            var IsFight = true;
-            var Bow = new Bow();
-            
-
-            //Спавн игрока
-            int y = 2, x = 5;
-            bool isSolid;
-            //Буфер
-            int yb = y, xb = x;
-             
-            while (true)
-            {
-                
-                
-                void Room1(string[,] zone, int y, int x)
-                {
-                    _proto_zone.RenderZone1(ref zone, ref y, ref x);
-                }
-                void Room2(string[,] zone, int y, int x)
-                {
-                    _proto_zone.RenderZone2(ref zone, ref y, ref x);
-                }
-                void Solid(ref int y, ref int x, ref int yb, ref int xb)
-                {
-                    y = yb;
-                    x = xb;
-                }
->>>>>>> Stashed changes
 
                 //Спавн игрока
                 int y = 2, x = 5;
@@ -397,84 +325,10 @@ namespace Dungeons
                             }
                             else
                             {
-<<<<<<< Updated upstream
                                 Console.WriteLine("Вы успешно сбежали.");
                                 IsFight = false;
                             }
                         }
-=======
-                                int DoorDmg = rnd.Next(1, 20);
-                                Player.Hp = Player.Hp - DoorDmg;
-                                Console.WriteLine($"Хоть вы и применили всю свою силу, открыть дверь не удалось. Вы растянули мышцы и получили {DoorDmg} урона.\nВаше нынешнее здоровье - {Player.Hp}.");
-                            }
-                            break;
-                        case ConsoleKey.N:
-                            Console.WriteLine("Вы решили не открывать двери.\nНа мгновение вам показалось, что дверь хочет, чтобы вы ее открыли.");
-                            break;
-                        default:
-                            break;
-                    }
-                }
-                if (zone[y, x] == " !")
-                {
-                    Console.WriteLine("Управление - WASD. Выход - Esc. ");
-                }
-                if (zone[y, x] == " W")
-                {
-                    Solid(ref y, ref x, ref yb, ref xb);
-                    NPC.Wizard(ref Book, ref SecondQuest, ref WizardMoney, ref WizardReward, ref Money, ref WizardHelp, ref WizardKill, ref NpcKilled);
-                }
-                if (zone[y, x] == " M")
-                {
-                    IsTalk = true;
-                    NPC.Merchant(ref Book, ref IsTalk, ref BookReject, ref Money, ref ArmorDef, ref LightDef, ref HeavyDef, ref WeaponDef, ref WeaponDmg, ref ShieldDef, ref ShieldDmg, ref BowDef, ref BowDmg, ref SwordDef, ref SwordDmg, ref Potion);
-                }
-                if (zone[y, x] == " ?")
-                {
-                    Solid(ref y, ref x, ref yb, ref xb);
-            
-                    NPC.QuestNPC(ref EnemyDead, ref TalkToNPC, ref TalkTalk, ref RewardNPC, ref Money, ref SecondQuest, ref  WizardMoney, ref  WizardKill, ref  NpcKilled, ref NpcReward, Player.Hp, ref Player.StrengthUp);
-                }
-                if (zone[y, x] == " X")
-                {
-                    Solid(ref y, ref x, ref yb, ref xb);
-                    NPC.Monster(ref TalkToNPC, ref EnemyDead, ref IsFight, Player.Hp, ref EnemyHp, ref y, ref Potion, ref Heal, 
-                        ref EnemyDmg, ref WeaponDef, ref ArmorDef, ref WeaponDmg);
-                }
-                if (zone[y, x] == " D")
-                {
-                    Solid(ref y, ref x, ref yb, ref xb);
-                    NPC.Doctor(Player.Hp, ref Money);
-                }
-                if (zone[y, x] == " O")
-                {
-                    Obj.Trap(Player.Hp);
-                }
-                if (zone[y, x] == " G")
-                {
-                    Solid(ref y, ref x, ref yb, ref xb);
-                    NPC.Warlock();
-                }
-                if (zone[y, x] == " T")
-                {
-                    Solid(ref y, ref x, ref yb, ref xb);
-                    NPC.Trainer(ref Player.StrengthUp, ref Player.TalkToTrainer);
-                }
-                if (zone[y, x] == " %")
-                {
-                    Solid(ref y, ref x, ref yb, ref xb);
-                    NPC.Dumbbell(ref Player.StrengthUp, ref Player.TalkToTrainer);
-                }
-
-                //Твёрдые объекты
-                {
-                    isSolid = zone[y, x] == " #" || zone[y, x] == " |" || zone[y, x] == "| "
-                           || zone[y, x] == "__" || zone[y, x] == "|_" || zone[y, x] == "_|" 
-                           || zone[y, x] == " Ш" || zone[y, x] == " W" || zone[y, x] == " %";
-                    if (isSolid)
-                    {
-                        Solid(ref y, ref x, ref yb, ref xb);
->>>>>>> Stashed changes
                     }
 
 
@@ -508,51 +362,12 @@ namespace Dungeons
                             break;
                         default:
 
-<<<<<<< Updated upstream
                             break;
                     }
 
                     Console.Clear();
-=======
-                            Console.Write($"Здоровье: {Player.Hp} Урон:{WeaponDmg + 5}\nМонет: {Money} Зелий: {Potion}\n");
-                switch (_proto_zone.ZoneId)
-                {
-                    case 1: Room1(zone, y, x); break;
-                    case 2: Room2(zone, y, x); break;
-                }
-                if (Player.InvtVisible)
-                {
-                    Player.ShowInvt(ref Player.Invt);
-                }
-                //Управление
-                ConsoleKey consoleKey = Console.ReadKey(true).Key;
-                switch (consoleKey)
-                {
-                    case ConsoleKey.S:
-                        y++;
-                        break;
-                    case ConsoleKey.W:
-                        y--;
-                        break;
-                    case ConsoleKey.D:
-                        x++;
-                        break;
-                    case ConsoleKey.A:
-                        x--;
-                        break;
-                    case ConsoleKey.E:
-                        Player.InvtVisible = true;
-                        break;
-                    default:
->>>>>>> Stashed changes
 
                 }
-<<<<<<< Updated upstream
-=======
-                
-                Console.Clear();
-
->>>>>>> Stashed changes
             }
         } 
     }

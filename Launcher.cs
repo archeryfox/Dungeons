@@ -12,24 +12,13 @@ namespace Dungeons
         {
             R CodeR = new R();
             V CodeV = new V();
-<<<<<<< Updated upstream
             Console.WriteLine("\t\tВыберите версию игры:\n\n >Версия Ростика - клавиша R\n >Версия Вити(Демо) - клавиша V\n");
-=======
-            Console.CursorVisible = false;
-            Console.WriteLine("\t\tВыберите версию игры:\n" +
-                "\n > Версия Ростика - клавиша R" +
-                "\n > Версия Вити(Демо) - клавиша V\n");
->>>>>>> Stashed changes
             Console.WriteLine($"              _\r\n            ,/A\\,\r\n          .//`_`\\\\,\r\n        ,//`____-`\\\\,\r\n      ,//`[_ROVER_]`\\\\,\r\n    ,//`=  ==  __-  _`\\\\,\r\n   //|__=  __- == _  __|\\\\\r\n   ` |  __ .-----.  _  | `\r\n     | - _/       \\-   |\r\n     |__  | .-\"-. | __=|\r\n     |  _=|/)   (\\|    |\r\n     |-__ (/ a a \\) -__|\r\n     |___ /`\\_Y_/`\\____|\r\n          \\)8===8(/");
-            //ConsoleKeyInfo consoleKeyInfo = Console.ReadKey(true);
-            //switch (consoleKeyInfo.Key)
-            string LaunchButt = "R";
-            switch (LaunchButt)
+            ConsoleKeyInfo consoleKeyInfo = Console.ReadKey(true);
+            switch (consoleKeyInfo.Key)
             {
-                //case ConsoleKey.R: Console.Clear(); CodeR.Run(); break;
-                //case ConsoleKey.V: Console.Clear(); CodeV.Run(); break;
-                case "R": Console.Clear(); CodeR.Run(); break;
-                case "V": Console.Clear(); CodeV.Run(); break;
+                case ConsoleKey.R: Console.Clear(); CodeR.Run(); break;
+                case ConsoleKey.V: Console.Clear(); CodeV.Run(); break;
                 default:
                     Console.Clear();
                     Console.WriteLine("Не та кнопка. Нажмите указанные!");
