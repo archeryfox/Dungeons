@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Invent.cs" />
     <Compile Include="Obj.cs" />
     <Compile Include="Zone.cs" />
     <Compile Include="NPC.cs" />

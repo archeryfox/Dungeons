@@ -23,7 +23,7 @@ namespace Dungeons
                     {
                         zone[y, x] = " @";
                     }
-                    zone[i, j] = " .";
+                    zone[i, j] = "  ";
                 }
             }
         }

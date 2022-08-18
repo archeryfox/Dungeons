@@ -385,13 +385,14 @@ namespace Dungeons
                 WizardReward = true;
             }
         }
-        static public void Chest(ref bool ChestOpen, ref bool Book)
+        static public void Chest(ref bool ChestOpen, ref bool Book, ref Player player)
         {
             if (ChestOpen == false)
             {
                 Console.WriteLine("Перед вами сундук. Вы открываете его.");
                 Console.WriteLine("Внутри не было ничего кроме старой пыльной книги под названием Утопия. Вы взяли ее с собой.");
                 ChestOpen = true;
+                Invent.Add(new Empty("Книга"), ref player.Inv, ref Invent.BusyCell);
                 Book = true;
             }
             else

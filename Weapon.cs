@@ -8,50 +8,117 @@ namespace Dungeons
 {
     internal class Weapon
     {
-        static public string Type { get; set; }
-        int Def { get; set; }
+        public string Type { get; set; }
+        public int Def { get; set; }
         public int Dmg { get; set; }
+        public int Lvl { get; set; }
     }
-
-        class Sword : Weapon
+    class Sword : Weapon
+    {
+        public Sword()
         {
-            public int Def;
-
-            public int Dmg;
-            Sword()
-            {
-                Dmg = 15;
-                Def = 2;
-            }
-
+            Type = "Меч";
+            Lvl = 1;
         }
-        class Shield : Weapon
+        private string type;
+        public string Type
         {
-            private int def = 12;
-
-            public int Def
-            {
-                get { return def; }
-                private set { }
-            }
-
-            public int Dmg { get; private set; }
+            get { return type; }
+            private set { type = "Меч"; }
         }
-        class Bow : Weapon
+        private int dmg;
+        public int Dmg
         {
-            public readonly string Type = "Bow";
-
-            private int def = 12;
-
-            public int Def
-            {
-                get { return def; }
-                private set { }
-            }
-
-            public int Dmg { get; private set; }
-
-
+            get { return dmg; }
+            private set { dmg = 11 + lvl; }
         }
-    
+        private int def;
+        public int Def
+        {
+            get { return def; }
+            private set { def = 2 + lvl; }
+        }
+        private int lvl;
+        public int Lvl
+        {
+            get { return lvl; }
+            set { lvl = 1; }
+        }
+        public int LvlUp()
+        {
+            return lvl + 1;
+        }
+    }
+    class Bow : Weapon
+    {
+        public Bow()
+        {
+            Type = "Лук";
+            Lvl = 1;
+        }
+        private string type;
+        public string Type
+        {
+            get { return type; }
+            private set { type = "Лук"; }
+        }
+        private int dmg;
+        public int Dmg
+        {
+            get { return dmg; }
+            private set { dmg = 11+lvl; }
+        }
+        private int def;
+        public int Def
+        {
+            get { return def; }
+            private set { def = 2+lvl; }
+        }
+        private int lvl;
+        public int Lvl
+        {
+            get { return lvl; }
+            set { lvl = 1; }
+        }
+        public int LvlUp()
+        {
+            return lvl+1;
+        }
+    }
+    class Shield : Weapon
+    {
+        public Shield()
+        {
+            Type = "Меч";
+            Lvl = 1;
+        }
+        private string type;
+        public string Type
+        {
+            get { return type; }
+            private set { type = "Щит"; }
+        }
+        private int dmg;
+        public int Dmg
+        {
+            get { return dmg; }
+            private set { dmg = 11 + lvl; }
+        }
+        private int def;
+        public int Def
+        {
+            get { return def; }
+            private set { def = 2 + lvl; }
+        }
+        private int lvl;
+        public int Lvl
+        {
+            get { return lvl; }
+            set { lvl = 1; }
+        }
+        public int LvlUp()
+        {
+            return lvl + 1;
+        }
+    }
 }
