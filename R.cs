@@ -57,14 +57,6 @@ namespace Dungeons
             Empty empt = new Empty();
             dynamic [] LocalInv = { Money, empt, empt, empt, empt, empt };
             
-            Invent.Add(Sword, ref LocalInv, ref Invent.BusyCell);
-            Invent.Add(Bow, ref LocalInv, ref Invent.BusyCell);
-            Invent.PullOut(ref LocalInv, ref Invent.BusyCell);
-            Invent.PullOut(ref LocalInv, ref Invent.BusyCell);
-            Invent.Add(Sword, ref LocalInv, ref Invent.BusyCell);
-            Invent.Add(Sword, ref LocalInv, ref Invent.BusyCell);
-            Invent.Add(Sword, ref LocalInv, ref Invent.BusyCell);
-            Invent.Add(Sword, ref LocalInv, ref Invent.BusyCell);
             //Спавн игрока
             int y = 2, x = 5;
             bool isSolid;
