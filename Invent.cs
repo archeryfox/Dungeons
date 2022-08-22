@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace Dungeons
 {
-    internal class Empty
+    internal class Item
+    {
+        public Item(string Type)
+        {
+            this.Type = Type;
+        }
+        public Item()
+        {
+            
+        }
+        public string Type;
+        public int Lvl = 0;
+    }
+    internal class Empty 
     {
         public Empty(string Type)
         {
@@ -14,11 +27,12 @@ namespace Dungeons
         }
         public Empty()
         {
-            
+
         }
         public string Type = "Пусто";
-        public int Lvl = -1;
+        public const int Lvl = -1;
     }
+
     internal class Invent
     {
         /// <summary>
@@ -67,7 +81,7 @@ namespace Dungeons
             }
             if (BusyCell < Inv.Length && BusyCell >= 1)
             {
-                Inv[BusyCell] = new Empty();
+                Inv[BusyCell] = new Item();
             }
         }
         /// <summary>

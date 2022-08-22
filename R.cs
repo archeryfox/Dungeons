@@ -54,7 +54,7 @@ namespace Dungeons
             var IsFight = true;
             Sword Sword = new Sword();
             Bow Bow = new Bow();
-            Empty empt = new Empty();
+            Item empt = new Item();
             dynamic [] LocalInv = { Money, empt, empt, empt, empt, empt };
             
             //Спавн игрока

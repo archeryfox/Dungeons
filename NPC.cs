@@ -392,7 +392,7 @@ namespace Dungeons
                 Console.WriteLine("Перед вами сундук. Вы открываете его.");
                 Console.WriteLine("Внутри не было ничего кроме старой пыльной книги под названием Утопия. Вы взяли ее с собой.");
                 ChestOpen = true;
-                Invent.Add(new Empty("Книга"), ref player.Inv, ref Invent.BusyCell);
+                Invent.Add(new Item("Книга"), ref player.Inv, ref Invent.BusyCell);
                 Book = true;
             }
             else
@@ -429,6 +429,7 @@ namespace Dungeons
                                 Console.WriteLine($"У вас теперь {Money} монет.");
                                 IsTalk = false;
                                 Book = false;
+                                Invent.PullOut(ref Player.Inv, ref Invent.BusyCell);
                                 break;
                             case ConsoleKey.N:
                                 Console.WriteLine("Эх, зря вы так, я ведь предложил хорошую цену!");

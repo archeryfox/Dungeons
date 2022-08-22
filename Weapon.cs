@@ -9,6 +9,7 @@ namespace Dungeons
     internal class Weapon
     {
         public string Type { get; set; }
+        public int def;
         public int Def { get; set; }
         public int Dmg { get; set; }
         public int Lvl { get; set; }
@@ -32,7 +33,7 @@ namespace Dungeons
             get { return dmg; }
             private set { dmg = 11 + lvl; }
         }
-        private int def;
+        
         public int Def
         {
             get { return def; }
